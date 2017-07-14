@@ -59,8 +59,7 @@ public class FlightTable {
 		return new ArrayList<City>(cities);	
 	}
 	
-	
-	private Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
+	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
 		
 		List<City> cites = airLine.getAllCities();
 		
