@@ -8,14 +8,6 @@ public class FoodService {
 
 	private List<Food> foodList = new ArrayList<Food>();
 
-	public List<Food> getMenu() {
-		return foodList;
-	}
-
-	public void setMenu(List<Food> foodList) {
-		this.foodList = foodList;
-	}
-
 	public void FoodMenu(TypeOfSeat seatClass) {
 		if (seatClass.equals(TypeOfSeat.ECONOMY_CLASS)) {
 			initalizeEconomyFood();
@@ -23,6 +15,10 @@ public class FoodService {
 		else {
 			initalizeFirstFood();
 		}
+	}
+
+	public List<Food> getMenu() {
+		return foodList;
 	}
 
 	private void initalizeEconomyFood() {
@@ -43,6 +39,10 @@ public class FoodService {
 		foodList.add(new Food("Lemon Cheesecake", 125));
 		foodList.add(new Food("Strawberry Cheesecake", 125));
 		foodList.add(new Food("Waffles and icecream", 100));
+	}
+
+	public void setMenu(List<Food> foodList) {
+		this.foodList = foodList;
 	}
 
 }

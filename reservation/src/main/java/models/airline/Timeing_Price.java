@@ -2,9 +2,9 @@ package models.airline;
 import java.time.LocalDateTime;
 
 public class Timeing_Price {
+	private Hours duration;
 	private double price;
 	private LocalDateTime start;
-	private Hours duration;
 
 	public Timeing_Price(double price, LocalDateTime start, Hours duration) {
 		this.price = price;
@@ -12,28 +12,28 @@ public class Timeing_Price {
 		this.duration = duration;
 	}
 
-	public double getPrice() {
-		return price;
+	public Hours getDuration() {
+		return duration;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public double getPrice() {
+		return price;
 	}
 
 	public LocalDateTime getStart() {
 		return start;
 	}
 
-	public void setStart(LocalDateTime start) {
-		this.start = start;
-	}
-
-	public Hours getDuration() {
-		return duration;
-	}
-
 	public void setDuration(Hours duration) {
 		this.duration = duration;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public void setStart(LocalDateTime start) {
+		this.start = start;
 	}
 	
 	@Override

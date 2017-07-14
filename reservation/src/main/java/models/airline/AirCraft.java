@@ -5,13 +5,13 @@ import java.util.*;
 import models.TypeOfSeat;
 
 public class AirCraft {
-	private final String model;
+	private double EPrice;
 	private final String flightNumber;
 	
-	private int numOfFSeat;
-	private int numOfESeat;
 	private double FPrice;
-	private double EPrice;
+	private final String model;
+	private int numOfESeat;
+	private int numOfFSeat;
 	
 	private List<Seat> seats;
 	
@@ -23,59 +23,6 @@ public class AirCraft {
 		this.flightNumber = flightNumber;
 		this.numOfESeat = numOfESeat;
 		this.numOfFSeat = numOfFSeat;
-	}
-	
-	public int getNumOfFSeat() {
-		return numOfFSeat;
-	}
-
-	public void setNumOfFSeat(int numOfFSeat) {
-		this.numOfFSeat = numOfFSeat;
-	}
-
-	public int getNumOfESeat() {
-		return numOfESeat;
-	}
-
-	public void setNumOfESeat(int numOfESeat) {
-		this.numOfESeat = numOfESeat;
-	}
-
-	public double getFPrice() {
-		return FPrice;
-	}
-
-	public void setFPrice(double fPrice) {
-		FPrice = fPrice;
-	}
-	
-	public double getEPrice() {
-		return EPrice;
-	}
-
-	public void setEPrice(double ePrice) {
-		EPrice = ePrice;
-	}
-
-	public List<Seat> getSeats() {
-		return new ArrayList<Seat>(seats);
-	}
-
-	public void setSeats(List<Seat> seats) {
-		this.seats = seats;
-	}
-
-	public String getModel() {
-		return model;
-	}
-
-	public String getFlightNumber() {
-		return flightNumber;
-	}
-	
-	@Override
-	public String toString() {
-		return flightNumber;
 	}
 	
 	private List<Seat> gernerateListOfSeat(int numOfFSeat,int numOfESeat,double FPrice,double EPrice){
@@ -95,5 +42,58 @@ public class AirCraft {
 				row++;
 		}
 		return seats;
+	}
+
+	public double getEPrice() {
+		return EPrice;
+	}
+
+	public String getFlightNumber() {
+		return flightNumber;
+	}
+
+	public double getFPrice() {
+		return FPrice;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public int getNumOfESeat() {
+		return numOfESeat;
+	}
+	
+	public int getNumOfFSeat() {
+		return numOfFSeat;
+	}
+
+	public List<Seat> getSeats() {
+		return new ArrayList<Seat>(seats);
+	}
+
+	public void setEPrice(double ePrice) {
+		EPrice = ePrice;
+	}
+
+	public void setFPrice(double fPrice) {
+		FPrice = fPrice;
+	}
+
+	public void setNumOfESeat(int numOfESeat) {
+		this.numOfESeat = numOfESeat;
+	}
+
+	public void setNumOfFSeat(int numOfFSeat) {
+		this.numOfFSeat = numOfFSeat;
+	}
+	
+	public void setSeats(List<Seat> seats) {
+		this.seats = seats;
+	}
+	
+	@Override
+	public String toString() {
+		return flightNumber;
 	}
 }

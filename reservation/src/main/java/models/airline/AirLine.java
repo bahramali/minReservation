@@ -4,9 +4,9 @@ import java.util.*;
 
 
 public class AirLine {
-	private String name;
 	private List<AirCraft> airCrafts = new ArrayList<AirCraft>();
 	private List<City> cities = new ArrayList<City>();
+	private String name;
 	
 
 	public AirLine(String name){
@@ -30,16 +30,24 @@ public class AirLine {
 		airCrafts.add(aircraft);
 	}
 
+	public void addCitiy(City city) {
+		cities.add(city);
+	}
+
+	public void addCitiy(String city) {
+		cities.add(new City(city));
+	}
+
 	public List<AirCraft> getAirCrafts() {
 		return new ArrayList<AirCraft>(airCrafts);
 	}
 
-	public String getName() {
-		return name;
+	public List<City> getAllCities() {
+		return new ArrayList<City>(cities);
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public String getName() {
+		return name;
 	}
 
 	public void setAirCrafts(List<AirCraft> airCrafts) {
@@ -49,16 +57,8 @@ public class AirLine {
 	public void setAllCities(List<City> someCities) {
 		cities = someCities;
 	}
-
-	public List<City> getAllCities() {
-		return new ArrayList<City>(cities);
-	}
-
-	public void addCitiy(String city) {
-		cities.add(new City(city));
-	}
-	public void addCitiy(City city) {
-		cities.add(city);
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	

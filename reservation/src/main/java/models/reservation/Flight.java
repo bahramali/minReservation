@@ -6,9 +6,9 @@ import models.airline.*;
 
 public class Flight {
 	
+	private LocalDateTime dateTime;
 	private City from;
 	private City to;
-	private LocalDateTime dateTime;
 	
 	public Flight(City from, City to,LocalDateTime dateTime) {	
 		this.dateTime = dateTime;
@@ -20,12 +20,12 @@ public class Flight {
 		return from;
 	}
 
-	public void setFrom(City from) {
-		this.from = from;
-	}
-
 	public City getTo() {
 		return to;
+	}
+
+	public void setFrom(City from) {
+		this.from = from;
 	}
 
 	public void setTo(City to) {

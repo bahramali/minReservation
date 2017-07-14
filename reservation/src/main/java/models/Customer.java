@@ -13,11 +13,11 @@ public class Customer {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getPassNumber() {
 		return passNumber;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public void setPassNumber(String passNumber) {
 		this.passNumber = passNumber;

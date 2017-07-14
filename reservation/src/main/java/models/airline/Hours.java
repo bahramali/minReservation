@@ -7,14 +7,14 @@ public class Hours {
 	private int minuts;
 	
 	
+	public Hours(int hour) {
+		this.hour = hour;
+		setMinuts(0);
+	}
 	public Hours(int hour, int minuts) {
 
 		this.hour = hour;
 		setMinuts(minuts);
-	}
-	public Hours(int hour) {
-		this.hour = hour;
-		setMinuts(0);
 	}
 
 
@@ -23,13 +23,13 @@ public class Hours {
 	}
 
 
-	public void setHour(int hour) {
-		this.hour = hour;
+	public int getMinuts() {
+		return minuts;
 	}
 
 
-	public int getMinuts() {
-		return minuts;
+	public void setHour(int hour) {
+		this.hour = hour;
 	}
 
 
