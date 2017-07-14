@@ -48,17 +48,25 @@ public class FlightTable {
 	}
 
 	public static List<City> initialCities(){
+		List<String> stringCities = new ArrayList<String>(Arrays.asList(TimeZone.getAvailableIDs()));
+	
 		List<City> cities = new ArrayList<City>();
 		
-		Arrays.asList(TimeZone.getAvailableIDs()).stream().
-		filter(t -> t.length()%4==0).collect(Collectors.toList()).
-		forEach(s -> {
-			if(s.toLowerCase().contains("europe"))
-				cities.add(new City(s.substring(s.indexOf("/")+1)));
+		stringCities.removeIf(s -> !s.toLowerCase().contains("europe"));
+		stringCities.replaceAll(s ->{return s.substring(s.indexOf("/")+1);});
+		
+		stringCities
+		.stream()
+		.filter(t -> (t.length()%2==0))
+		.filter(t ->t.length()<6)
+		.collect(Collectors.toList())
+		.forEach(s -> {
+			cities.add(new City(s));
 		} );
+		
 		return new ArrayList<City>(cities);	
 	}
-	
+
 	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
 		
 		List<City> cites = airLine.getAllCities();
