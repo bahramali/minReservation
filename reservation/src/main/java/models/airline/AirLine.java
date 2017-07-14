@@ -1,9 +1,6 @@
 package models.airline;
 
 import java.util.*;
-import java.util.stream.Collectors;
-
-import models.reservation.*;
 
 
 public class AirLine {
