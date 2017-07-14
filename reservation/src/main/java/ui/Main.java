@@ -13,8 +13,8 @@ public class Main {
 		//-----------------------------Test AirLine--------------------------
 		
 		AirLine macAir = new AirLine("MAC AIR");
-		AirLine macAir2 = new AirLine("MAC AIR",new ArrayList<AirCraft>());
-		AirLine macAir3 = new AirLine("MAC AIR",new AirCraft(16, 40, 2500, 2500, "Boeing 330", "IR703"));
+//		AirLine macAir2 = new AirLine("MAC AIR",new ArrayList<AirCraft>());
+//		AirLine macAir3 = new AirLine("MAC AIR",new AirCraft(16, 40, 2500, 2500, "Boeing 330", "IR703"));
 		
 		//-----------------------------Test AirCraft--------------------------
 		
