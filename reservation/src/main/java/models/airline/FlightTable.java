@@ -14,20 +14,19 @@ import java.util.stream.Collectors;
 import models.reservation.Flight;
 
 public class FlightTable {
-	private AirLine airLine; 
+	private AirLine airLine;
 	private Map<Flight,Timeing_Price> flightTable;
+	
+	public FlightTable(AirLine airLine){
+		this.airLine = airLine;
+		flightTable = new HashMap<Flight,Timeing_Price>();
+	}
 	
 	public FlightTable(AirLine airLine,Map<Flight,Timeing_Price> flightTable){
 		this.airLine = airLine;
 		this.flightTable = flightTable;
 	}
 
-	public FlightTable(AirLine airLine){
-		this.airLine = airLine;
-		flightTable = new HashMap<Flight,Timeing_Price>();
-	}
-	
-	
 	public AirLine getAirLine()
 	{
 		return airLine;
@@ -57,7 +56,7 @@ public class FlightTable {
 			if(s.toLowerCase().contains("europe"))
 				cities.add(new City(s.substring(s.indexOf("/")+1)));
 		} );
-		return cities;	
+		return new ArrayList<City>(cities);	
 	}
 	
 	
