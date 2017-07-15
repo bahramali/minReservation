@@ -94,6 +94,6 @@ public class AirCraft {
 	
 	@Override
 	public String toString() {
-		return flightNumber;
+		return String.format("FlightNumber %-5s has %-3d seats (%-3d firstclass and %-3d ecconomyClass)", flightNumber,(numOfESeat+numOfFSeat),numOfFSeat,numOfESeat);
 	}
 }
