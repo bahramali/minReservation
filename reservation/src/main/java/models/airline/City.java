@@ -34,7 +34,7 @@ public class City {
 		if(findLocalTime(name)!=null) {
 			this.name = name;
 		}else {
-			System.out.println("There is no "+name+". Write correct.");
+			System.out.println("There is no "+name+". Write the correct.");
 			setName(new Scanner(System.in).nextLine());
 		}
 	}
