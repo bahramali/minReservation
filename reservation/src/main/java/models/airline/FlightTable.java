@@ -1,5 +1,6 @@
 package models.airline;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -11,6 +12,8 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
+import javafx.util.converter.LocalDateStringConverter;
+import models.DayOfWeekAndTime;
 import models.reservation.Flight;
 
 public class FlightTable {
@@ -68,15 +71,40 @@ public class FlightTable {
 	}
 
 	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
+		List<City> cities = airLine.getAllCities();
 		
-		List<City> cites = airLine.getAllCities();
+		List<DayOfWeekAndTime> cityDayTime = new ArrayList<DayOfWeekAndTime>();
+		for (int i = 0;i<cities.size()*cities.size();i++ ) {
+			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+9), ((int)(Math.random()*12)*5))));
+			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
+			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
+		}
+
+		List<CityTimeTable> cityTable = new ArrayList<CityTimeTable>();
 		
-		List<Flight> flights = new ArrayList<Flight>();
+//		cityTable.add(new CityTimeTable(cities.get(0), cities.get(1), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(0), cities.get(2), departureTiming.get(1), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(0), cities.get(3), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(1), cities.get(0), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(1), cities.get(2), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(1), cities.get(3), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(2), cities.get(0), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(2), cities.get(1), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(2), cities.get(3), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(3), cities.get(0), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(3), cities.get(1), departureTiming.get(0), arrivlTiming.get(0)));
+//		cityTable.add(new CityTimeTable(cities.get(3), cities.get(2), departureTiming.get(0), arrivlTiming.get(0)));
 		
-		flights.add(new Flight(cites.get(0),cites.get(1),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
-		flights.add(new Flight(cites.get(2),cites.get(3),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
-		flights.add(new Flight(cites.get(4),cites.get(5),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
-		flights.add(new Flight(cites.get(6),cites.get(7),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
+		
+//		List<Flight> flights = new ArrayList<Flight>();
+//		
+//		for(int i = 0;i< cities.size()-1;i++) {
+//			flights.add(new Flight(cities.get(i),cities.get(i+1),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
+//			
+//		}
+//		flights.add(new Flight(cities.get(2),cities.get(3),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
+//		flights.add(new Flight(cities.get(4),cities.get(5),LocalDateTime.of(LocalDate.of(2017, 10, 10), LocalTime.of(14, 30))));
+
 		
 		return new HashMap<Flight,Timeing_Price>();
 	}
