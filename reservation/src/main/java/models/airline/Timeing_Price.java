@@ -1,6 +1,8 @@
 package models.airline;
 import java.time.LocalDateTime;
 
+import models.Hours;
+
 public class Timeing_Price {
 	private Hours duration;
 	private double price;

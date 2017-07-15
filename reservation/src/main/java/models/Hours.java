@@ -1,4 +1,4 @@
-package models.airline;
+package models;
 
 
 
