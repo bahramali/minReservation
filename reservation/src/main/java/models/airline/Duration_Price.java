@@ -1,16 +1,13 @@
 package models.airline;
-import java.time.LocalDateTime;
 
 import models.Hours;
 
-public class Timeing_Price {
-	private Hours duration;
+public class Duration_Price {
 	private double price;
-	private LocalDateTime start;
+	private Hours duration;
 
-	public Timeing_Price(double price, LocalDateTime start, Hours duration) {
+	public Duration_Price(double price, Hours duration) {
 		this.price = price;
-		this.start = start;
 		this.duration = duration;
 	}
 
@@ -22,10 +19,6 @@ public class Timeing_Price {
 		return price;
 	}
 
-	public LocalDateTime getStart() {
-		return start;
-	}
-
 	public void setDuration(Hours duration) {
 		this.duration = duration;
 	}
@@ -34,14 +27,9 @@ public class Timeing_Price {
 		this.price = price;
 	}
 
-	public void setStart(LocalDateTime start) {
-		this.start = start;
-	}
-	
 	@Override
 	public String toString() {
-		return String.format("%-14s%-6s%-8.2f",
-				start.toString(),duration,price);
+		return String.format("%-14s%-8.2f",duration,price);
 	}
 	
 }
