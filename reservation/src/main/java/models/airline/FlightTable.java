@@ -72,15 +72,17 @@ public class FlightTable {
 
 	public static List<DayOfWeekAndTime> initialDayTime(AirLine airLine) {
 		List<City> cities = airLine.getAllCities();
+		List<DayOfWeekAndTime> dayTime = new ArrayList<DayOfWeekAndTime>();
 		
-		List<DayOfWeekAndTime> cityDayTime = new ArrayList<DayOfWeekAndTime>();
-		for (int i = 0;i<cities.size()*cities.size();i++ ) {
-			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+9), ((int)(Math.random()*12)*5))));
-			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
-			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
+		for (int i = 0;i<(cities.size()*(cities.size()-1))/3+(cities.size()*(cities.size()-1)%3);i++ ) {
+			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+9), ((int)(Math.random()*12)*5))));
+			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
+			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
 		}
-		return cityDayTime;
+		dayTime.sort((a,b)->a.getDayOfWeek().compareTo(b.getDayOfWeek()));
+		return dayTime;
 	}
+	
 	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
 		List<City> cities = airLine.getAllCities();
 		
