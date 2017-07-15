@@ -9,12 +9,10 @@ public class CityTimeTable
 	private City  city1;
 	private City  city2;
 	private DayOfWeekAndTime departured_Datetime;
-	private DayOfWeekAndTime arrival_Datetime;
 	
-	public CityTimeTable(City city1, City city2,DayOfWeekAndTime arrival_Datetime,DayOfWeekAndTime departured_Datetime) {
+	public CityTimeTable(City city1, City city2,DayOfWeekAndTime departured_Datetime) {
 		this.city1 = city1;
 		this.city2 = city2;
-		this.arrival_Datetime = arrival_Datetime;
 		this.departured_Datetime = departured_Datetime;
 	}
 
@@ -48,21 +46,13 @@ public class CityTimeTable
 		this.departured_Datetime = departured_Datetime;
 	}
 
-	public DayOfWeekAndTime getArrival_Datetime()
-	{
-		return arrival_Datetime;
-	}
-
-	public void setArrival_Datetime(DayOfWeekAndTime arrival_Datetime)
-	{
-		this.arrival_Datetime = arrival_Datetime;
-	}
+	
 	
 	@Override
 	public String toString()
 	{
 
-		return String.format("%-7s%-7s%-18s%-18s",city1,city2,departured_Datetime,arrival_Datetime );
+		return String.format("%-7s%-7s%-18s",city1,city2,departured_Datetime );
 	}
 	
 }
