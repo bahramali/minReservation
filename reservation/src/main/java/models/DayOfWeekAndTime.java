@@ -35,6 +35,6 @@ public class DayOfWeekAndTime{
 	@Override
 	public String toString()
 	{
-		return String.format("%-8s%-8s", dayOfWeek.toString(),localTime.toString());
+		return String.format("%-10s%-8s", dayOfWeek.toString(),localTime.toString());
 	}
 }
