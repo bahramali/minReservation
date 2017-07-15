@@ -70,7 +70,7 @@ public class FlightTable {
 		return new ArrayList<City>(cities);	
 	}
 
-	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
+	public static List<DayOfWeekAndTime> initialDayTime(AirLine airLine) {
 		List<City> cities = airLine.getAllCities();
 		
 		List<DayOfWeekAndTime> cityDayTime = new ArrayList<DayOfWeekAndTime>();
@@ -79,6 +79,11 @@ public class FlightTable {
 			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
 			cityDayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
 		}
+		return cityDayTime;
+	}
+	public static Map<Flight,Timeing_Price> initialTableFlights(AirLine airLine) {
+		List<City> cities = airLine.getAllCities();
+		
 
 		List<CityTimeTable> cityTable = new ArrayList<CityTimeTable>();
 		
