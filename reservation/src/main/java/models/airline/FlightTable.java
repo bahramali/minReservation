@@ -13,7 +13,7 @@ import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 import javafx.util.converter.LocalDateStringConverter;
-import models.DayOfWeekAndTime;
+import models.WeekDays_Time;
 import models.reservation.Flight;
 
 public class FlightTable {
@@ -70,14 +70,14 @@ public class FlightTable {
 		return new ArrayList<City>(cities);	
 	}
 
-	public static List<DayOfWeekAndTime> initialDayTime(AirLine airLine) {
+	public static List<WeekDays_Time> initialDayTime(AirLine airLine) {
 		List<City> cities = airLine.getAllCities();
-		List<DayOfWeekAndTime> dayTime = new ArrayList<DayOfWeekAndTime>();
+		List<WeekDays_Time> dayTime = new ArrayList<WeekDays_Time>();
 		
 		for (int i = 0;i<(cities.size()*(cities.size()-1))/3+(cities.size()*(cities.size()-1)%3);i++ ) {
-			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+9), ((int)(Math.random()*12)*5))));
-			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
-			dayTime.add(new DayOfWeekAndTime(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
+			dayTime.add(new WeekDays_Time(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+9), ((int)(Math.random()*12)*5))));
+			dayTime.add(new WeekDays_Time(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+14), ((int)(Math.random()*12)*5))));
+			dayTime.add(new WeekDays_Time(DayOfWeek.of(i%7+1), LocalTime.of(((int)(Math.random()*5)+19), ((int)(Math.random()*12)*5))));
 		}
 		dayTime.sort((a,b)->a.getDayOfWeek().compareTo(b.getDayOfWeek()));
 		return dayTime;

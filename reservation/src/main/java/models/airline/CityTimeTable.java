@@ -1,16 +1,16 @@
 package models.airline;
 
 
-import models.DayOfWeekAndTime;
+import models.WeekDays_Time;
 
 public class CityTimeTable
 {
 
 	private City  city1;
 	private City  city2;
-	private DayOfWeekAndTime departured_Datetime;
+	private WeekDays_Time departured_Datetime;
 	
-	public CityTimeTable(City city1, City city2,DayOfWeekAndTime departured_Datetime) {
+	public CityTimeTable(City city1, City city2,WeekDays_Time departured_Datetime) {
 		this.city1 = city1;
 		this.city2 = city2;
 		this.departured_Datetime = departured_Datetime;
@@ -36,12 +36,12 @@ public class CityTimeTable
 		this.city2 = city2;
 	}
 
-	public DayOfWeekAndTime getDepartured_Datetime()
+	public WeekDays_Time getDepartured_Datetime()
 	{
 		return departured_Datetime;
 	}
 
-	public void setDepartured_Datetime(DayOfWeekAndTime departured_Datetime)
+	public void setDepartured_Datetime(WeekDays_Time departured_Datetime)
 	{
 		this.departured_Datetime = departured_Datetime;
 	}
