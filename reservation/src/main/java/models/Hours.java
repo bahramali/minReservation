@@ -1,11 +1,11 @@
 package models;
 
-
+import java.time.LocalTime;
 
 public class Hours {
 	private int hour;
 	private int minuts;
-	
+	LocalTime localHour; 
 	
 	public Hours(int hour) {
 		this.hour = hour;
@@ -32,7 +32,10 @@ public class Hours {
 		this.hour = hour;
 	}
 
-
+	public LocalTime toLocalTime() {
+		
+		return LocalTime.of(hour, minuts);
+	}
 	public void setMinuts(int minuts) {
 		if((0<=minuts) && (minuts<60))
 				this.minuts = minuts;
