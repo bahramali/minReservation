@@ -30,12 +30,14 @@ public class AirLine {
 		airCrafts.add(aircraft);
 	}
 
-	public void addCitiy(City city) {
+	public List<City> addCitiy(City city) {
 		cities.add(city);
+		return new ArrayList<City>(cities);
 	}
 
-	public void addCitiy(String city) {
+	public List<City> addCity(String city) {
 		cities.add(new City(city));
+		return new ArrayList<City>(cities);
 	}
 
 	public List<AirCraft> getAirCrafts() {
