@@ -4,11 +4,11 @@ import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 
-public class DayOfWeekAndTime{
+public class WeekDays_Time{
 	private DayOfWeek dayOfWeek;
 	private LocalTime localTime;
 	
-	public DayOfWeekAndTime(DayOfWeek dayOfWeek,LocalTime localTime) {
+	public WeekDays_Time(DayOfWeek dayOfWeek,LocalTime localTime) {
 		this.dayOfWeek = dayOfWeek;
 		this.localTime = localTime;
 	}
