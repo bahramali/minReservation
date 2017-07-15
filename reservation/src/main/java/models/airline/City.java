@@ -34,6 +34,6 @@ public class City {
 	@Override
 	public String toString() {
 
-		return String.format("%-11s", name);
+		return String.format("%-8s", name);
 	}
 }
